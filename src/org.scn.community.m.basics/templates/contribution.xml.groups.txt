@@ -1,0 +1,4 @@
+
+	<group
+		id="ScnCommunityMBasics"
+		title="Scn Community M Basics"/>

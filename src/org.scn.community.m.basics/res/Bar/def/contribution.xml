@@ -1,0 +1,38 @@
+
+<component id="Bar" 
+	title="Fiori Bar"
+	icon="res/Bar/Bar.png"
+	handlerType="sapui5" 
+	propertySheetPath="aps/org.scn.community.PropertyPage.div.html"
+	group="ScnCommunityBasics">
+
+	<jsInclude>res/Bar/Bar.js</jsInclude>
+  	<cssInclude>res/Bar/Bar.css</cssInclude>
+  	<property id="itemConfigLeft" type="String" title="Left Item Config" visible="false" group="Display"/>
+  	<property id="itemConfigMiddle" type="String" title="Middle Item Config" visible="false" group="Display"/>
+  	<property id="itemConfigRight" type="String" title="Right Item Config" visible="false" group="Display"/>
+  	<property id="enabled" type="boolean" title="Enabled"/>
+  	<property id="enableFlexBox" type="boolean" title="Enable Flex Box"/>
+  	<property id="translucent" type="boolean" title="Translucent"/>
+  	<property type="String" title="Design" id="design" visible="true" group="Display">
+  		<possibleValue>Auto</possibleValue>
+  		<possibleValue>Footer</possibleValue>
+  		<possibleValue>Header</possibleValue>
+  		<possibleValue>SubHeader</possibleValue>
+  	</property>
+  	<property type="String" title="Selected Item" id="selectedItem" visible="false" group="Display"/>
+  	<property type="String" title="Selected Header of Item" id="selectedHeader" visible="false" group="Display"/>
+  	<property type="String" title="Selected Item Key" id="selectedItemKey" visible="false" group="Display"/>
+  	<property type="String" title="Selected Header Key of Item" id="selectedHeaderKey" visible="false" group="Display"/>
+  	<property type="ScriptText" title="On Item Select" id="onitemselect" group="Events"/> 
+ 	<initialization>
+ 		<defaultValue property="design">Auto</defaultValue>
+ 		<defaultValue property="enabled">true</defaultValue>
+		<defaultValue property="TOP_MARGIN">0</defaultValue>
+		<defaultValue property="LEFT_MARGIN">0</defaultValue>
+		<defaultValue property="RIGHT_MARGIN">auto</defaultValue>
+		<defaultValue property="BOTTOM_MARGIN">auto</defaultValue>
+ 		<defaultValue property="WIDTH">400</defaultValue>
+ 		<defaultValue property="HEIGHT">48</defaultValue>
+ 	</initialization>
+ </component>
