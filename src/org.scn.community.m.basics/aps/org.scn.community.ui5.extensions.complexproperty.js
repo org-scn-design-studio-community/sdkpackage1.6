@@ -22,7 +22,6 @@ propertyPageHandlerRegistry.push({
 	},
 	getter : function(property, control){
 		var arrayValue = control.getValue();
-		alert(0);
 		newValue = JSON.stringify(arrayValue);
 		alert("ci new value: " +newValue);
 		return newValue;
@@ -114,33 +113,38 @@ sap.ui.commons.layout.VerticalLayout.extend("org.scn.community.aps.ComplexProper
 			for(var i=0;i<propertyPageHandlerRegistry.length;i++){
 				var reg = propertyPageHandlerRegistry[i];
 				if(reg.id == item.apsControl) {
-					var getHandler = function(property, apsControl){
-						return function(oControlEvent){
-							var newValue;
-							/**
-							 * Scan handler registry
-							 */
-							for(var i=0;i<propertyPageHandlerRegistry.length;i++){
-								var handler = propertyPageHandlerRegistry[i];
-								if(handler.id == apsControl) {
-									newValue = handler.getter.call(this, property, oControlEvent.getSource());
-									if(handler.serialized){
-										if(newValue && newValue !=""){
-											newValue = jQuery.parseJSON(newValue);
-										}else{
-											newValue = null;
+					try{
+						var getHandler = function(property, apsControl){
+							return function(oControlEvent){
+								var newValue;
+								/**
+								 * Scan handler registry
+								 */
+								for(var i=0;i<propertyPageHandlerRegistry.length;i++){
+									var handler = propertyPageHandlerRegistry[i];
+									if(handler.id == apsControl) {
+										newValue = handler.getter.call(this, property, oControlEvent.getSource());
+										if(handler.serialized){
+											if(newValue && newValue !=""){
+												newValue = jQuery.parseJSON(newValue);
+											}else{
+												newValue = null;
+											}
 										}
 									}
 								}
-							}
-							var v = this.getValue();
-							v[property] = newValue;
-							this.setValue(v);
-							this.fireValueChange();							
-						};
-					}(field, item.apsControl);
-					control = reg.createComponent.call(this, field, item, getHandler);
-					this["cmp_" + field] = control;
+								var v = this.getValue();
+								v[property] = newValue;
+								this.setValue(v);
+								this.fireValueChange();							
+							};
+						}(field, item.apsControl);
+						control = reg.createComponent.call(this, field, item, getHandler);
+						this["cmp_" + field] = control;
+												
+					}catch(e){
+						alert("Problem with registering handler in complexproperty" + e);
+					}
 				}
 			}
 			var property = field;

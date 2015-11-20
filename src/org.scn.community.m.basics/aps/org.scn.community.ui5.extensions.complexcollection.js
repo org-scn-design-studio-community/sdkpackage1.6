@@ -37,6 +37,33 @@ propertyPageHandlerRegistry.push({
 	}
 });
 /**
+ * Register Handler
+ */
+propertyPageHandlerRegistry.push({
+	id : "objectarray",
+	serialized : false,
+	setter : function(property, value){
+		var newValue = undefined;
+		newValue = value;
+		this["cmp_"+property].setValue(newValue);
+	},
+	getter : function(property, control){
+		return control.getValue();
+		//newValue = JSON.stringify(arrayValue);
+		//return newValue;
+	},
+	createComponent : function(property, propertyOptions, changeHandler){
+		var component = new org.scn.community.aps.ComplexCollection({
+			width : "100%",
+			title : propertyOptions.desc,
+			config : propertyOptions.apsConfig,
+			showCollapseIcon : false
+		});
+		component.attachValueChange(changeHandler ,this);
+		return component;
+	}
+});
+/**
  * Create UI5 Extension
  */
 sap.ui.commons.layout.VerticalLayout.extend("org.scn.community.aps.ComplexCollection", {
@@ -75,7 +102,8 @@ sap.ui.commons.layout.VerticalLayout.extend("org.scn.community.aps.ComplexCollec
 		return this;
 	},
 	getValue : function(){
-		return sap.ui.core.Control.prototype.getProperty.apply(this,["value"]);
+		var r = sap.ui.core.Control.prototype.getProperty.apply(this,["value"]); 
+		return r;
 	},
 	setTitle : function(s){
 		sap.ui.core.Control.prototype.setProperty.apply(this,["title",s]);
@@ -222,7 +250,6 @@ sap.ui.commons.layout.VerticalLayout.extend("org.scn.community.aps.ComplexCollec
 			});
 			this.columnTable.addColumn(detailColumn);
 		}
-		// alert(JSON.stringify(this.getConfig()));
 	},
 	generateNewItem : function(){
 		var newItem = {};
@@ -301,7 +328,6 @@ sap.ui.commons.layout.VerticalLayout.extend("org.scn.community.aps.ComplexCollec
 		this.apsModel = new sap.ui.model.json.JSONModel();
 		this.columnTable.setModel(this.apsModel);
 		this.columnTable.bindRows("/propertyData");
-		
 	},	 
 	renderer : {},
 	needsLabel : function() {

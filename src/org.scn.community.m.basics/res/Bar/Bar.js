@@ -40,12 +40,13 @@ define([], function() {
 				desc : "Item Configuration",
 				cat : "Items",
 				keyField : "key",
-				apsControl : "complexcollection",
+				apsControl : "objectarray",
 				apsConfig : {
 					items : {
 						desc : "Sub-Items",
 						cat : "n/a",
-						apsControl : "complexcollection",
+						defaultValue : [],
+						apsControl : "objectarray",
 						apsConfig : {
 							key : {
 								desc : "Key",
@@ -102,7 +103,10 @@ define([], function() {
 					}
 				}
 			},
-			ui5Meta : "string"
+			ui5Meta : {
+				type : "object[]",
+				defaultValue : []
+			}
 		}
 		var itemConfigLeft = jQuery.parseJSON(JSON.stringify(itemConfig));
 		var itemConfigMiddle = jQuery.parseJSON(JSON.stringify(itemConfig));
@@ -196,6 +200,10 @@ define([], function() {
 		for(var p in dsProperties){
 			if(dsProperties[p].ui5Meta) meta.properties[p] = dsProperties[p].ui5Meta;
 		}
+		meta.properties.itemConfig = {
+			type : "object[]",
+			defaultValue : []	
+		};
 		sap.m.Bar.extend("org.scn.community.m.basics.Bar", {
 			_itemConfigLeft : [],
 			_itemConfigRight : [],
@@ -236,35 +244,29 @@ define([], function() {
 			getSelectedHeaderKey : function(){
 				return this._selectedHeaderKey;
 			},
-			setItemConfigLeft : function(s){
-				var o = [];
-				if(s && s!="") o = jQuery.parseJSON(s);
-				this._itemConfigLeft = o;
+			setItemConfigLeft : function(a){
+				this._itemConfigLeft = a;
 				this.redraw();
 				return this;
 			},
-			setItemConfigMiddle : function(s){
-				var o = [];
-				if(s && s!="") o = jQuery.parseJSON(s);
-				this._itemConfigMiddle = o;
+			setItemConfigMiddle : function(a){
+				this._itemConfigMiddle = a;
 				this.redraw();
 				return this;
 			},
-			setItemConfigRight : function(s){
-				var o = [];
-				if(s && s!="") o = jQuery.parseJSON(s);
-				this._itemConfigRight = o;
+			setItemConfigRight : function(a){
+				this._itemConfigRight = a;
 				this.redraw();
 				return this;
 			},
 			getItemConfigLeft : function(){
-				return JSON.stringify(this._itemConfigLeft);
+				return this._itemConfigLeft;
 			},
 			getItemConfigMiddle : function(){
-				return JSON.stringify(this._itemConfigMiddle);
+				return this._itemConfigMiddle;
 			},
 			getItemConfigRight : function(){
-				return JSON.stringify(this._itemConfigRight);
+				return this._itemConfigRight;
 			},
 			redraw : function(){
 				this.destroyContentLeft();
@@ -278,6 +280,7 @@ define([], function() {
 					prop : "itemConfigRight", method : "addContentRight", getter : "getContentRight"
 				}]
 				for(var z = 0; z < conf.length; z++){
+					//alert(JSON.stringify(this["_"+conf[z].prop]));
 					for(var i=0;i<this["_"+conf[z].prop].length;i++){
 						var title = "";
 						var actualTitle = this["_"+conf[z].prop][i].text;

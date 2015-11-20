@@ -8,9 +8,54 @@
 	group="ScnCommunityBasics">
 
 	<requireJs modes="m">res/Bar/Bar</requireJs>
-  	<property id="itemConfigLeft" type="String" title="Left Item Config" visible="false" group="Display"/>
-  	<property id="itemConfigMiddle" type="String" title="Middle Item Config" visible="false" group="Display"/>
-  	<property id="itemConfigRight" type="String" title="Right Item Config" visible="false" group="Display"/>
+  	<property id="itemConfigLeft" type="Array" title = "Left Items">
+  		<property id="item" type="Object" title="Item">
+  			<property id="key" type="Text" title="Key"></property>
+  			<property id="text" type="Text" title="Text"></property>
+  			<property id="icon" type="Text" title="Icon"></property>
+  			<property id="showTitle" type="boolean" title="Show Title"></property>
+  			<property id="type" type="Text" title="Button Type"></property>
+  			<property id="items" type="Array" title = "Sub Items">
+  				<property id="item" type="Object" title="Item">
+	  				<property id="key" type="Text" title="Key"></property>
+	  				<property id="text" type="Text" title="Text"></property>
+	  				<property id="icon" type="Text" title="Icon"></property>
+  				</property>
+  			</property>
+  		</property>
+  	</property>
+  	<property id="itemConfigMiddle" type="Array" title = "Middle Items">
+  		<property id="item" type="Object" title="Item">
+  			<property id="key" type="Text" title="Key"></property>
+  			<property id="text" type="Text" title="Text"></property>
+  			<property id="icon" type="Text" title="Icon"></property>
+  			<property id="showTitle" type="boolean" title="Show Title"></property>
+  			<property id="type" type="Text" title="Button Type"></property>
+  			<property id="items" type="Array" title = "Sub Items">
+  				<property id="item" type="Object" title="Item">
+	  				<property id="key" type="Text" title="Key"></property>
+	  				<property id="text" type="Text" title="Text"></property>
+	  				<property id="icon" type="Text" title="Icon"></property>
+  				</property>
+  			</property>
+  		</property>
+  	</property>
+  	<property id="itemConfigRight" type="Array" title = "Right Items">
+  		<property id="item" type="Object" title="Item">
+  			<property id="key" type="Text" title="Key"></property>
+  			<property id="text" type="Text" title="Text"></property>
+  			<property id="icon" type="Text" title="Icon"></property>
+  			<property id="showTitle" type="boolean" title="Show Title"></property>
+  			<property id="type" type="Text" title="Button Type"></property>
+  			<property id="items" type="Array" title = "Sub Items">
+  				<property id="item" type="Object" title="Item">
+	  				<property id="key" type="Text" title="Key"></property>
+	  				<property id="text" type="Text" title="Text"></property>
+	  				<property id="icon" type="Text" title="Icon"></property>
+  				</property>
+  			</property>
+  		</property>
+  	</property>
   	<property id="enabled" type="boolean" title="Enabled"/>
   	<property id="enableFlexBox" type="boolean" title="Enable Flex Box"/>
   	<property id="translucent" type="boolean" title="Translucent"/>
@@ -26,6 +71,9 @@
   	<property type="String" title="Selected Header Key of Item" id="selectedHeaderKey" visible="false" group="Display"/>
   	<property type="ScriptText" title="On Item Select" id="onitemselect" group="Events"/> 
  	<initialization>
+ 		<defaultValue property="itemConfigLeft">[]</defaultValue>
+ 		<defaultValue property="itemConfigMiddle">[]</defaultValue>
+ 		<defaultValue property="itemConfigRight">[]</defaultValue>
  		<defaultValue property="design">Auto</defaultValue>
  		<defaultValue property="enabled">true</defaultValue>
 		<defaultValue property="TOP_MARGIN">0</defaultValue>
