@@ -3,11 +3,11 @@
 	title="Fiori Bar"
 	icon="res/Bar/Bar.png"
 	handlerType="sapui5" 
+	modes="m"  
 	propertySheetPath="aps/org.scn.community.PropertyPage.div.html"
 	group="ScnCommunityBasics">
 
-	<jsInclude>res/Bar/Bar.js</jsInclude>
-  	<cssInclude>res/Bar/Bar.css</cssInclude>
+	<requireJs modes="m">res/Bar/Bar</requireJs>
   	<property id="itemConfigLeft" type="String" title="Left Item Config" visible="false" group="Display"/>
   	<property id="itemConfigMiddle" type="String" title="Middle Item Config" visible="false" group="Display"/>
   	<property id="itemConfigRight" type="String" title="Right Item Config" visible="false" group="Display"/>
