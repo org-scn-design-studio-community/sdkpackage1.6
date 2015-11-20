@@ -191,6 +191,45 @@
 		id="ScnCommunityMBasics"
 		title="Scn Community M Basics"/>
 
+<component id="AppHeader" 
+	title="Fiori App Header"
+	icon="res/AppHeader/AppHeader.png"
+	handlerType="sapui5" 
+	modes="m"  
+	propertySheetPath="aps/org.scn.community.PropertyPage.div.html"
+	group="ScnCommunityBasics">
+  	
+	<requireJs modes="m">res/AppHeader/AppHeader</requireJs>
+  	<property id="title" type="String" title="Title" group="Display"/>
+  	<property id="itemConfig" type="Array" title = "Items">
+  		<property id="item" type="Object" title="Item">
+  			<property id="key" type="Text" title="Key"></property>
+  			<property id="text" type="Text" title="Text"></property>
+  			<property id="icon" type="Text" title="Icon"></property>
+  			<property id="showTitle" type="boolean" title="Show Title"></property>
+  			<property id="type" type="Text" title="Button Type"></property>
+  			<property id="items" type="Array" title = "Sub Items">
+  				<property id="item" type="Object" title="Item">
+	  				<property id="key" type="Text" title="Key"></property>
+	  				<property id="text" type="Text" title="Text"></property>
+	  				<property id="icon" type="Text" title="Icon"></property>
+  				</property>
+  			</property>
+  		</property>
+  	</property>
+  	<property id="showNavButton" type="boolean" title="Show Back Button" group="Display"/>
+  	<property type="String" title="Selected Item Key" id="selectedItem" visible="false" group="Display"/>
+  	<property type="String" title="Selected Item Text" id="selectedItemText" visible="false" group="Display"/>
+  	<property type="String" title="Selected Header Key of Item" id="selectedHeader" visible="false" group="Display"/>
+  	<property type="String" title="Selected Header Text of Item" id="selectedHeaderText" visible="false" group="Display"/>
+  	<property type="ScriptText" title="On Item Select" id="onitemselect" group="Events"/>  	
+  	<property type="ScriptText" title="On Back" id="onnav" group="Events"/>
+ 	<initialization>
+ 		<defaultValue property="title">Page Title</defaultValue>
+ 		<defaultValue property="itemConfig">[]</defaultValue>
+ 		<defaultValue property="WIDTH">400</defaultValue>
+ 	</initialization>
+ </component>
 <component id="Bar" 
 	title="Fiori Bar"
 	icon="res/Bar/Bar.png"
