@@ -1,0 +1,32 @@
+
+<component id="SegmentedButton" 
+	title="Fiori SegmentedButton"
+	icon="res/SegmentedButton/SegmentedButton.png"
+	handlerType="sapui5" 
+	modes="m"
+	propertySheetPath="aps/org.scn.community.PropertyPage.div.html"
+	group="ScnCommunityMBasics">
+
+	<requireJs modes="m">res/SegmentedButton/SegmentedButton</requireJs>
+  	<property id="itemConfig" type="Array" title = "Items">
+  		<property id="item" type="Object" title="Item">
+  			<property id="key" type="Text" title="Key"></property>
+  			<property id="text" type="Text" title="Text"></property>
+  			<property id="icon" type="Text" title="Icon"></property>
+  			<property id="showTitle" type="boolean" title="Show Title"></property>
+  		</property>
+  	</property>
+  	<property id="enabled" type="boolean" title="Enabled"/>
+  	<property type="String" title="Selected Key" id="selectedKey" group="Display"/>
+  	<property type="ScriptText" title="On Select" id="onselect" group="Events"/> 
+ 	<initialization>
+ 		<defaultValue property="itemConfig">[]</defaultValue>
+ 		<defaultValue property="enabled">true</defaultValue>
+		<defaultValue property="TOP_MARGIN">0</defaultValue>
+		<defaultValue property="LEFT_MARGIN">0</defaultValue>
+		<defaultValue property="RIGHT_MARGIN">auto</defaultValue>
+		<defaultValue property="BOTTOM_MARGIN">auto</defaultValue>
+ 		<defaultValue property="WIDTH">400</defaultValue>
+ 		<defaultValue property="HEIGHT">48</defaultValue>
+ 	</initialization>
+ </component>

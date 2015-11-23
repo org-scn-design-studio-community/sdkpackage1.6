@@ -1,5 +1,5 @@
 /**
- * Copyright 2014 SCN Community Contributors
+ * Copyright 2015 SCN Community Contributors
  * 
  * Original Source Code Location:
  *  https://github.com/sap-design-studio-free-addons/sdk-package
@@ -20,7 +20,7 @@
 /**
  *	Officially working sap.m mode sap.m.Bar for Design Studio 1.6
  */
-define([], function() {
+define(["css!./Bar.css"], function() {
 	var componentInfo = {
 			visible : true,
 			title : "Bar",
@@ -215,7 +215,7 @@ define([], function() {
 			initDesignStudio : function() {
 				// Called by sap.designstudio.sdkui5.Handler  (sdkui5_handler.js)
 				this.addStyleClass("DesignStudioSCN");
-				this.addStyleClass("FioriBar");
+				this.addStyleClass("Bar");
 			},
 			dsClick : function(oControlEvent){
 				this.fireDesignStudioEvent("onnav");

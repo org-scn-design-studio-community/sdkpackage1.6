@@ -1,3 +1,48 @@
-.DesignStudioSCN.FioriToolbar {
-	
+
+.sapUiSizeCompact .DesignStudioSCN .sapMBtnCustomIcon,
+.sapUiSizeCompact .DesignStudioSCN .sapMBtnIcon,
+.sapUiSizeCompact .DesignStudioSCN .sapUiIcon,
+.sapUiSizeCompact .DesignStudioSCN .sapUiIconMirrorInRTL{
+	line-height: 1.5rem !important;
 }
+
+.DesignStudioSCN .sapMBtnCustomIcon,
+.DesignStudioSCN .sapMBtnIcon,
+.DesignStudioSCN .sapUiIcon,
+.DesignStudioSCN .sapUiIconMirrorInRTL{
+	line-height: 2.37rem !important;
+}
+
+.sapUiSizeCompact .DesignStudioSCN .sapMBtnInner,
+.sapUiSizeCompact .DesignStudioSCN .sapMBtnDefault,
+.sapUiSizeCompact .DesignStudioSCN .sapMBtnHoverable,
+.sapUiSizeCompact .DesignStudioSCN .sapMBtnInner,
+.sapUiSizeCompact .DesignStudioSCN .sapMFocusable,
+.sapUiSizeCompact .DesignStudioSCN .sapMToggleBtnPressed{
+	height : 2rem !important;
+}
+
+.DesignStudioSCN .sapMBtnInner 
+.DesignStudioSCN .sapMBtnDefault,
+.DesignStudioSCN .sapMBtnHoverable,
+.DesignStudioSCN .sapMBtnInner,
+.DesignStudioSCN .sapMFocusable,
+.DesignStudioSCN .sapMToggleBtnPressed{
+	height : 2.5rem !important;
+}
+
+.sapUiSizeCompact .DesignStudioSCN .sapMBtnIconsapMBtnCustomIcon 
+.sapUiSizeCompact .DesignStudioSCN .sapMBtnIcon,
+.sapUiSizeCompact .DesignStudioSCN .sapUiIcon,
+.sapUiSizeCompact .DesignStudioSCN .sapUiIconMirrorInRTL {
+    width: 1.5rem !important;
+}
+
+.DesignStudioSCN .sapMBtnIconsapMBtnCustomIcon 
+.DesignStudioSCN .sapMBtnIcon,
+.DesignStudioSCN .sapUiIcon,
+.DesignStudioSCN .sapUiIconMirrorInRTL {
+    width: 2rem !important;
+}
+
+

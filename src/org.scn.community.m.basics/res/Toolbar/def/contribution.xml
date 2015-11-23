@@ -1,0 +1,50 @@
+
+<component id="Toolbar" 
+	title="Fiori Toolbar"
+	icon="res/Toolbar/Toolbar.png"
+	handlerType="sapui5" 
+	modes="m"
+	propertySheetPath="aps/org.scn.community.PropertyPage.div.html"
+	group="ScnCommunityMBasics">
+
+	<requireJs modes="m">res/Toolbar/Toolbar</requireJs>
+  	<property id="itemConfig" type="Array" title = "Items">
+  		<property id="item" type="Object" title="Item">
+  			<property id="key" type="Text" title="Key"></property>
+  			<property id="text" type="Text" title="Text"></property>
+  			<property id="icon" type="Text" title="Icon"></property>
+  			<property id="showTitle" type="boolean" title="Show Title"></property>
+  			<property id="type" type="Text" title="Button Type"></property>
+  			<property id="items" type="Array" title = "Sub Items">
+  				<property id="item" type="Object" title="Item">
+	  				<property id="key" type="Text" title="Key"></property>
+	  				<property id="text" type="Text" title="Text"></property>
+	  				<property id="icon" type="Text" title="Icon"></property>
+  				</property>
+  			</property>
+  		</property>
+  	</property>
+  	<property id="enabled" type="boolean" title="Enabled"/>
+  	<property type="String" title="Design" id="design" visible="true" group="Display">
+  		<possibleValue>Auto</possibleValue>
+  		<possibleValue>Info</possibleValue>
+  		<possibleValue>Solid</possibleValue>
+  		<possibleValue>Transparent</possibleValue>
+  	</property>
+  	<property type="String" title="Selected Item" id="selectedItem" visible="false" group="Display"/>
+  	<property type="String" title="Selected Header of Item" id="selectedHeader" visible="false" group="Display"/>
+  	<property type="String" title="Selected Item Key" id="selectedItemKey" visible="false" group="Display"/>
+  	<property type="String" title="Selected Header Key of Item" id="selectedHeaderKey" visible="false" group="Display"/>
+  	<property type="ScriptText" title="On Item Select" id="onitemselect" group="Events"/> 
+ 	<initialization>
+ 		<defaultValue property="itemConfig">[]</defaultValue>
+ 		<defaultValue property="design">Auto</defaultValue>
+ 		<defaultValue property="enabled">true</defaultValue>
+		<defaultValue property="TOP_MARGIN">0</defaultValue>
+		<defaultValue property="LEFT_MARGIN">0</defaultValue>
+		<defaultValue property="RIGHT_MARGIN">auto</defaultValue>
+		<defaultValue property="BOTTOM_MARGIN">auto</defaultValue>
+ 		<defaultValue property="WIDTH">400</defaultValue>
+ 		<defaultValue property="HEIGHT">48</defaultValue>
+ 	</initialization>
+ </component>

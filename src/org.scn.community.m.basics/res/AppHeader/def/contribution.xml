@@ -5,7 +5,7 @@
 	handlerType="sapui5" 
 	modes="m"  
 	propertySheetPath="aps/org.scn.community.PropertyPage.div.html"
-	group="ScnCommunityBasics">
+	group="ScnCommunityMBasics">
   	
 	<requireJs modes="m">res/AppHeader/AppHeader</requireJs>
   	<property id="title" type="String" title="Title" group="Display"/>
