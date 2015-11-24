@@ -325,6 +325,18 @@ class org.scn.community.basics.m.AppHeader extends org.scn.community.shared.Comp
 		return this.selectedHeaderKey;
 	*}
 	
+}class org.scn.community.m.basics.Button extends org.scn.community.shared.Component {
+	/** 
+ 	<example>
+	Get Switch State
+	<code>
+	SWITCH_1.getState();<br>
+	</code>
+	</example>
+	 */
+	boolean getState() {*		
+		return this.state; 
+	*}
 }class org.scn.community.m.basics.SegmentedButton extends org.scn.community.shared.Component {
 	/** Add an item
  	<example>
@@ -356,6 +368,18 @@ class org.scn.community.basics.m.AppHeader extends org.scn.community.shared.Comp
 			o[matchIndex].icon = icon;
 		}		
 		itemConfig = o;
+	*}
+}class org.scn.community.m.basics.Switch extends org.scn.community.shared.Component {
+	/** 
+ 	<example>
+	Get Switch State
+	<code>
+	SWITCH_1.getState();<br>
+	</code>
+	</example>
+	 */
+	boolean getState() {*		
+		return this.state; 
 	*}
 }class org.scn.community.basics.m.Toolbar extends org.scn.community.shared.Component {
 	/** Add a header button

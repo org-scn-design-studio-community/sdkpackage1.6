@@ -22,7 +22,7 @@
  * (http://scn.sap.com/community/businessobjects-design-studio/blog/2014/11/03/design-studio-sdk-13--fiori-like-page-heading-with-buttons-and-more)
  * 
  */
-define([], function() {
+define(["css!../ZenCrosstabFix.css"], function() {
 	var componentInfo = {
 		visible : true,
 		title : "App Header",
@@ -226,6 +226,7 @@ define([], function() {
 					text : title,
 					icon : this._itemConfig[i].icon
 				});
+				b.addStyleClass("DesignStudioSCN");
 				if(this._itemConfig[i].type) b.setType(this._itemConfig[i].type);
 				this.addHeaderContent(b);
 				var items = this._itemConfig[i].items || [];
@@ -247,12 +248,14 @@ define([], function() {
 								title :  this._itemConfig[index].text,
 								placement : "Vertical",
 							});
+							actionSheet.addStyleClass("DesignStudioSCN");
 							for(var j=0;j<items.length;j++){
 								var item = items[j];
 								var actionButton = new sap.m.Button({
 									text : item.text,
 								    icon : item.icon
 								});
+								actionButton.addStyleClass("DesignStudioSCN");
 								// Event Handler definition
 								var clickHandler = function(it,section,as){
 									return function(oControlEvent){

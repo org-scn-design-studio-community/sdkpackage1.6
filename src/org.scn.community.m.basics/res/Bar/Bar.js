@@ -20,7 +20,7 @@
 /**
  *	Officially working sap.m mode sap.m.Bar for Design Studio 1.6
  */
-define(["css!./Bar.css"], function() {
+define(["css!../ZenCrosstabFix.css"], function() {
 	var componentInfo = {
 			visible : true,
 			title : "Bar",
@@ -289,6 +289,7 @@ define(["css!./Bar.css"], function() {
 							text : title,
 							icon : this["_"+conf[z].prop][i].icon
 						});
+						b.addStyleClass("DesignStudioSCN");
 						if(this["_"+conf[z].prop][i].type) b.setType(this["_"+conf[z].prop][i].type);
 						this[conf[z].method](b);
 						var items = this["_"+conf[z].prop][i].items || [];
@@ -315,12 +316,14 @@ define(["css!./Bar.css"], function() {
 										title :  this["_"+config.prop][index].text,
 										placement : "Vertical",
 									});
+									actionSheet.addStyleClass("DesignStudioSCN");
 									for(var j=0;j<items.length;j++){
 										var item = items[j];
 										var actionButton = new sap.m.Button({
 											text : item.text,
 										    icon : item.icon
 										});
+										actionButton.addStyleClass("DesignStudioSCN");
 										// Action Item Handler
 										var actionHandler = function(it,section,as){
 											return function(oControlEvent){

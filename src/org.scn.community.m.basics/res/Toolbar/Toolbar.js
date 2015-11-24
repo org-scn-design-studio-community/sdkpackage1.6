@@ -20,7 +20,7 @@
 /**
  *	Officially working sap.m mode sap.m.Toolbar for Design Studio 1.6
  */
-define([], function() {
+define(["css!../ZenCrosstabFix.css"], function() {
 	var componentInfo = {
 		visible : true,
 		title : "Fiori Toolbar",
@@ -232,6 +232,7 @@ define([], function() {
 					text : title,
 					icon : this._itemConfig[i].icon
 				});
+				b.addStyleClass("DesignStudioSCN");
 				if(this._itemConfig[i].type) b.setType(this._itemConfig[i].type);
 				this.addContent(b);
 				var items = this._itemConfig[i].items || [];
@@ -258,12 +259,14 @@ define([], function() {
 								title :  this._itemConfig[index].text,
 								placement : "Vertical",
 							});
+							actionSheet.addStyleClass("DesignStudioSCN");
 							for(var j=0;j<items.length;j++){
 								var item = items[j];
 								var actionButton = new sap.m.Button({
 									text : item.text,
 								    icon : item.icon
 								});
+								actionButton.addStyleClass("DesignStudioSCN");
 								// Action Item Handler
 								var actionHandler = function(it,section,as){
 									return function(oControlEvent){
