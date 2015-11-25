@@ -337,6 +337,8 @@ class org.scn.community.basics.m.AppHeader extends org.scn.community.shared.Comp
 	boolean getState() {*		
 		return this.state; 
 	*}
+}class org.scn.community.m.basics.Input extends org.scn.community.shared.Component {
+	
 }class org.scn.community.m.basics.SegmentedButton extends org.scn.community.shared.Component {
 	/** Add an item
  	<example>

@@ -8,6 +8,7 @@ type ..\..\org.scn.community.shared\templates.main\contribution.xml.head.txt ^
 ..\res\AppHeader\def\contribution.xml ^
 ..\res\Bar\def\contribution.xml ^
 ..\res\Button\def\contribution.xml ^
+..\res\Input\def\contribution.xml ^
 ..\res\SegmentedButton\def\contribution.xml ^
 ..\res\Switch\def\contribution.xml ^
 ..\res\Toolbar\def\contribution.xml ^
@@ -22,6 +23,7 @@ type ..\..\org.scn.community.shared\templates.main\contribution.ztl.head.txt ^
 ..\res\AppHeader\def\contribution.ztl ^
 ..\res\Bar\def\contribution.ztl ^
 ..\res\Button\def\contribution.ztl ^
+..\res\Input\def\contribution.ztl ^
 ..\res\SegmentedButton\def\contribution.ztl ^
 ..\res\Switch\def\contribution.ztl ^
 ..\res\Toolbar\def\contribution.ztl ^

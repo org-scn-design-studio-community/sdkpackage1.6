@@ -1,0 +1,101 @@
+<core:View
+	controllerName="sap.suite.ui.commons.sample.GenericTile1x1.GenericTile1x1"
+	xmlns="sap.suite.ui.commons"
+	xmlns:core="sap.ui.core">
+	<GenericTile 
+		header="Cumulative Totals"
+		subheader="Expenses"
+		size="S" 
+		frameType="OneByOne"
+		press="press">
+		<tileContent>
+			<TileContent footer="Actual and Target" unit="EUR" size="S">
+				<content>
+					<BulletChart size="S" scale="M" targetValue="75" targetValueLabel="75c" minValue="0" maxValue="150">
+						<actual>
+							<BulletChartData value="125" color="Error"/>
+						</actual>
+						<thresholds>
+							<BulletChartData value="35" color="Critical"/>
+							<BulletChartData value="115" color="Error"/>
+						</thresholds>
+					</BulletChart> 
+				</content>
+			</TileContent>
+		</tileContent>
+	</GenericTile>
+	<GenericTile 
+		header="US Profit Margin"
+		size="S" 
+		frameType="OneByOne"
+		press="press">
+		<tileContent>
+			<TileContent footer="Current Quarter" unit="EUR" size="S">
+				<content>
+					<NumericContent size="S" scale="M" value="1.96" valueColor="Error" indicator="Up"/>
+				</content>
+			</TileContent>
+		</tileContent>
+	</GenericTile>
+	<GenericTile 
+		header="Comparative Annual Totals"
+		subheader="By Region"
+		size="S" 
+		frameType="OneByOne"
+		press="press">
+		<tileContent>
+			<TileContent footer="Compare across regions" unit="EUR" size="S">
+				<content>
+					<ComparisonChart size="S" scale="M">
+				        <data>
+				        	<ComparisonData	title="Americas" value="234" color="Good"/>
+				        	<ComparisonData	title="EMEA" value="97" color="Error"/>
+				        	<ComparisonData	title="APAC" value="197" color="Critical"/>
+				        </data>
+			        </ComparisonChart>
+				</content>
+			</TileContent>
+		</tileContent>
+	</GenericTile>
+	<GenericTile 
+		header="Total Income Change"
+		subheader="By year"
+		size="S" 
+		frameType="OneByOne"
+		press="press">
+		<tileContent>
+			<TileContent footer="Current vs previous" unit="EUR" size="S">
+				<content>
+					<DeltaMicroChart size="S" value1="35" value2="33" title1="Jan 2015" title2="Jan 2014" displayValue1="35 Mio" displayValue2="33 Mio" deltaDisplayValue="2 Mio" color="Good"/>
+				</content>
+			</TileContent>
+		</tileContent>
+	</GenericTile>
+	<GenericTile 
+		header="Approve Travel Request"
+		size="M" 
+		frameType="OneByOne"
+		press="press">
+		<tileContent>
+			<TileContent footer="Leave Requests" size="M">
+				<content>
+					<NumericContent size="M" value="3" icon="sap-icon://travel-expense" />
+				</content>
+			</TileContent>
+		</tileContent>
+	</GenericTile>
+	<GenericTile 
+		header="123 Demo Opportunity"
+		subheader="SAP Jam Group"
+		size="M" 
+		frameType="OneByOne"
+		press="press">
+		<tileContent>
+			<TileContent footer="Hours since last Activity" size="M">
+				<content>
+					<NumericContent size="M" value="9" icon="sap-icon://locked" />
+				</content>
+			</TileContent>
+		</tileContent>
+	</GenericTile>
+</core:View>
