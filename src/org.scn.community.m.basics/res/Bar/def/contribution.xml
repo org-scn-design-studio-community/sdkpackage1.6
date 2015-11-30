@@ -1,6 +1,7 @@
 
 <component id="Bar" 
-	title="Fiori Bar"
+	title="Bar"
+	tooltip="sap.m Bar"
 	icon="res/Bar/Bar.png"
 	handlerType="sapui5" 
 	modes="m"  
@@ -8,6 +9,12 @@
 	group="ScnCommunityMBasics">
 
 	<requireJs modes="m">res/Bar/Bar</requireJs>
+  	<!-- Old-school JSON Approach -->
+  	<property id="itemConfigLeft" type="String" title = "Left Items" visible="false"/>
+  	<property id="itemConfigMiddle" type="String" title = "Middle Items" visible="false"/>
+  	<property id="itemConfigRight" type="String" title = "Right Items" visible="false"/>
+  	<!-- New Approach - Cannot figure out default values, though. -->
+  	<!-- 
   	<property id="itemConfigLeft" type="Array" title = "Left Items">
   		<property id="item" type="Object" title="Item">
   			<property id="key" type="Text" title="Key"></property>
@@ -56,8 +63,8 @@
   			</property>
   		</property>
   	</property>
+  	 -->
   	<property id="enabled" type="boolean" title="Enabled"/>
-  	<property id="enableFlexBox" type="boolean" title="Enable Flex Box"/>
   	<property id="translucent" type="boolean" title="Translucent"/>
   	<property type="String" title="Design" id="design" visible="true" group="Display">
   		<possibleValue>Auto</possibleValue>
@@ -71,16 +78,16 @@
   	<property type="String" title="Selected Header Key of Item" id="selectedHeaderKey" visible="false" group="Display"/>
   	<property type="ScriptText" title="On Item Select" id="onitemselect" group="Events"/> 
  	<initialization>
- 		<defaultValue property="itemConfigLeft">[]</defaultValue>
- 		<defaultValue property="itemConfigMiddle">[]</defaultValue>
- 		<defaultValue property="itemConfigRight">[]</defaultValue>
- 		<defaultValue property="design">Auto</defaultValue>
+ 		<defaultValue property="itemConfigLeft"><![CDATA[[{"icon":"sap-icon://database","text":"Toggle Navigation Panel","key":"TOGGLE_NAV","type":"Default"},{"icon":"sap-icon://filter","text":"Toggle Filter Line","key":"TOGGLE_FILTER","type":"Default"}]]]></defaultValue>
+ 		<defaultValue property="itemConfigMiddle"><![CDATA[[]]]></defaultValue>
+ 		<defaultValue property="itemConfigRight"><![CDATA[[{"icon":"sap-icon://action","items":[{"icon":"sap-icon://excel-attachment","text":"Excel","key":"SHARE_EXCEL"},{"icon":"sap-icon://pdf-attachment","text":"PDF","key":"SHARE_PDF"}],"text":"Share","key":"SHARE","type":"Emphasized"},{"icon":"sap-icon://bookmark","text":"Bookmark","key":"BOOKMARK","type":"Accept"},{"items":[],"key":"HELP","text":"Help","icon":"sap-icon://sys-help-2","showTitle":true,"type":"Reject"}]]]></defaultValue>
+ 		<defaultValue property="design">Footer</defaultValue>
  		<defaultValue property="enabled">true</defaultValue>
 		<defaultValue property="TOP_MARGIN">0</defaultValue>
 		<defaultValue property="LEFT_MARGIN">0</defaultValue>
-		<defaultValue property="RIGHT_MARGIN">auto</defaultValue>
+		<defaultValue property="RIGHT_MARGIN">0</defaultValue>
 		<defaultValue property="BOTTOM_MARGIN">auto</defaultValue>
- 		<defaultValue property="WIDTH">400</defaultValue>
- 		<defaultValue property="HEIGHT">48</defaultValue>
+ 		<defaultValue property="WIDTH">auto</defaultValue>
+ 		<defaultValue property="HEIGHT">auto</defaultValue>
  	</initialization>
  </component>

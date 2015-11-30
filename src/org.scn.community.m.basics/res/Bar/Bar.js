@@ -40,7 +40,7 @@ define(["css!../ZenCrosstabFix.css"], function() {
 				desc : "Item Configuration",
 				cat : "Items",
 				keyField : "key",
-				apsControl : "objectarray",
+				apsControl : "complexcollection",
 				apsConfig : {
 					items : {
 						desc : "Sub-Items",
@@ -181,15 +181,6 @@ define(["css!../ZenCrosstabFix.css"], function() {
 				},
 				ui5Meta : "boolean"
 			},
-			enableFlexBox : {
-				opts : {
-					cat : "General",
-					desc : "Enable Flex Box",
-					defaultValue : true,
-					apsControl : "checkbox",
-				},
-				ui5Meta : "boolean"
-			},
 			itemConfigLeft : itemConfigLeft,
 			itemConfigMiddle : itemConfigMiddle,
 			itemConfigRight : itemConfigRight
@@ -200,10 +191,6 @@ define(["css!../ZenCrosstabFix.css"], function() {
 		for(var p in dsProperties){
 			if(dsProperties[p].ui5Meta) meta.properties[p] = dsProperties[p].ui5Meta;
 		}
-		meta.properties.itemConfig = {
-			type : "object[]",
-			defaultValue : []	
-		};
 		sap.m.Bar.extend("org.scn.community.m.basics.Bar", {
 			_itemConfigLeft : [],
 			_itemConfigRight : [],
@@ -245,17 +232,29 @@ define(["css!../ZenCrosstabFix.css"], function() {
 				return this._selectedHeaderKey;
 			},
 			setItemConfigLeft : function(a){
-				this._itemConfigLeft = a;
+				if(typeof a=="string"){
+					this._itemConfigLeft = JSON.parse(a);
+				}else{
+					this._itemConfigLeft = a;	
+				}
 				this.redraw();
 				return this;
 			},
 			setItemConfigMiddle : function(a){
-				this._itemConfigMiddle = a;
+				if(typeof a=="string"){
+					this._itemConfigMiddle = JSON.parse(a);
+				}else{
+					this._itemConfigMiddle = a;	
+				}
 				this.redraw();
 				return this;
 			},
 			setItemConfigRight : function(a){
-				this._itemConfigRight = a;
+				if(typeof a=="string"){
+					this._itemConfigRight = JSON.parse(a);
+				}else{
+					this._itemConfigRight = a;	
+				}
 				this.redraw();
 				return this;
 			},
@@ -272,6 +271,7 @@ define(["css!../ZenCrosstabFix.css"], function() {
 				this.destroyContentLeft();
 				this.destroyContentMiddle();
 				this.destroyContentRight();
+				try{
 				var conf = [{
 					prop : "itemConfigLeft", method : "addContentLeft", getter : "getContentLeft"
 				},{
@@ -280,13 +280,13 @@ define(["css!../ZenCrosstabFix.css"], function() {
 					prop : "itemConfigRight", method : "addContentRight", getter : "getContentRight"
 				}]
 				for(var z = 0; z < conf.length; z++){
-					//alert(JSON.stringify(this["_"+conf[z].prop]));
 					for(var i=0;i<this["_"+conf[z].prop].length;i++){
 						var title = "";
 						var actualTitle = this["_"+conf[z].prop][i].text;
 						if(this["_"+conf[z].prop][i].showTitle) title = actualTitle;
 						var b = new sap.m.Button({
 							text : title,
+							tooltip : actualTitle,
 							icon : this["_"+conf[z].prop][i].icon
 						});
 						b.addStyleClass("DesignStudioSCN");
@@ -344,7 +344,10 @@ define(["css!../ZenCrosstabFix.css"], function() {
 							b.attachPress(clickHandler,this);
 						}
 					}
-				}	
+				}
+				}catch(e){
+					alert(e);
+				}
 			},
 			callOnSet : function(property,value){
 				return null;	// TODO

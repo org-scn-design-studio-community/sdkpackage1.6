@@ -1,0 +1,37 @@
+
+<!-- Fiori Tile Container Component -->
+<component id="TileContainer"
+	title="Tile Container"
+	tooltip="sap.m Tile Container"
+	icon="res/TileContainer/TileContainer.png"
+	handlerType="sapui5" 
+	modes="m"
+	propertySheetPath="aps/org.scn.community.PropertyPage.div.html"
+	group="ScnCommunityMBasics">
+
+	<requireJs modes="m">res/TileContainer/TileContainer</requireJs>
+	
+	<property id="itemConfig" type="Array" title = "Items">
+  		<property id="item" type="Object" title="Item">
+  			<property id="key" type="Text" title="Key"></property>
+  			<property id="title" type="Text" title="Title"></property>
+  			<property id="styleClass" type="boolean" title="CSS Class"></property>
+  			<property id="info" type="Text" title="Info Text"></property>
+  			<property id="icon" type="Text" title="Icon"></property>
+  			<property id="number" type="Text" title="Number"></property>
+  			<property id="numberUnit" type="Text" title="Number UOM"></property>
+  			<property id="valueState" type="Text" title="Value State"></property>
+  		</property>
+  	</property>
+  	<property group="Display" type="String" title="Selected Tile" id="selectedTile" visible="false"/>
+  	<property group="Events" type="ScriptText" title="On Tile Click" id="onclick"/>
+  	<initialization>
+		<defaultValue property="itemConfig">[]</defaultValue>
+		<defaultValue property="TOP_MARGIN">0</defaultValue>
+		<defaultValue property="LEFT_MARGIN">0</defaultValue>
+		<defaultValue property="RIGHT_MARGIN">auto</defaultValue>
+		<defaultValue property="BOTTOM_MARGIN">auto</defaultValue>
+  		<defaultValue property="WIDTH">575</defaultValue>
+		<defaultValue property="HEIGHT">575</defaultValue>
+  	</initialization>
+</component>

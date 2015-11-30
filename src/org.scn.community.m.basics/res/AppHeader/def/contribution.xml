@@ -1,6 +1,7 @@
 
 <component id="AppHeader" 
-	title="Fiori App Header"
+	title="App Header"
+	tooltip="sap.m App Header"
 	icon="res/AppHeader/AppHeader.png"
 	handlerType="sapui5" 
 	modes="m"  
@@ -35,6 +36,11 @@
  	<initialization>
  		<defaultValue property="title">Page Title</defaultValue>
  		<defaultValue property="itemConfig">[]</defaultValue>
- 		<defaultValue property="WIDTH">400</defaultValue>
+ 		<defaultValue property="TOP_MARGIN">0</defaultValue>
+		<defaultValue property="LEFT_MARGIN">0</defaultValue>
+		<defaultValue property="RIGHT_MARGIN">0</defaultValue>
+		<defaultValue property="BOTTOM_MARGIN">auto</defaultValue>
+ 		<defaultValue property="WIDTH">auto</defaultValue>
+ 		<defaultValue property="HEIGHT">auto</defaultValue>
  	</initialization>
  </component>

@@ -10,7 +10,9 @@ type ..\..\org.scn.community.shared\templates.main\contribution.xml.head.txt ^
 ..\res\Button\def\contribution.xml ^
 ..\res\Input\def\contribution.xml ^
 ..\res\SegmentedButton\def\contribution.xml ^
+..\res\Slider\def\contribution.xml ^
 ..\res\Switch\def\contribution.xml ^
+..\res\TileContainer\def\contribution.xml ^
 ..\res\Toolbar\def\contribution.xml ^
 ..\..\org.scn.community.shared\templates.main\contribution.xml.close.txt > ^
 ..\contribution.xml
@@ -25,7 +27,9 @@ type ..\..\org.scn.community.shared\templates.main\contribution.ztl.head.txt ^
 ..\res\Button\def\contribution.ztl ^
 ..\res\Input\def\contribution.ztl ^
 ..\res\SegmentedButton\def\contribution.ztl ^
+..\res\Slider\def\contribution.ztl ^
 ..\res\Switch\def\contribution.ztl ^
+..\res\TileContainer\def\contribution.ztl ^
 ..\res\Toolbar\def\contribution.ztl ^
 ..\..\org.scn.community.shared\templates.main\contribution.ztl.close.txt > ^
 ..\contribution.ztl

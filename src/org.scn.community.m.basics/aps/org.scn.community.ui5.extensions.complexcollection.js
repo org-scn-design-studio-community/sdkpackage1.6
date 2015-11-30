@@ -13,11 +13,15 @@ propertyPageHandlerRegistry.push({
 	serialized : true,
 	setter : function(property, value){
 		var newValue = undefined;
-		if(value && value!=""){
-			newValue = jQuery.parseJSON(value);	
+		if(typeof value=="object"){
+			newValue = value;
 		}else{
-			// Blank
-		}	
+			if(value && value!=""){
+				newValue = jQuery.parseJSON(value);	
+			}else{
+				// Blank
+			}	
+		}
 		this["cmp_"+property].setValue(newValue);
 	},
 	getter : function(property, control){
@@ -44,7 +48,17 @@ propertyPageHandlerRegistry.push({
 	serialized : false,
 	setter : function(property, value){
 		var newValue = undefined;
-		newValue = value;
+		if(!Array.isArray(value)){
+			try{
+				propertyPage.log("Non-Array passed.  Trying to convert to array for b/w compat: " + value);
+				newValue = JSON.parse(value);	
+			}catch(e){
+				propertyPage.log("Could not convert to array." + e);
+				newValue = [];
+			}
+		}else{
+			newValue = value;	
+		}		
 		this["cmp_"+property].setValue(newValue);
 	},
 	getter : function(property, control){

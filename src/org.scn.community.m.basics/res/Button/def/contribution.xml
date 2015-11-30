@@ -1,6 +1,7 @@
 
 <component id="Button" 
-	title="Fiori Button"
+	title="Button"
+	tooltip="sap.m Button"
 	icon="res/Button/Button.png"
 	handlerType="sapui5" 
 	modes="m"

@@ -1,6 +1,7 @@
 
 <component id="SegmentedButton" 
-	title="Fiori SegmentedButton"
+	title="Segmented Button"
+	tooltip="sap.m Segmented Button"
 	icon="res/SegmentedButton/SegmentedButton.png"
 	handlerType="sapui5" 
 	modes="m"

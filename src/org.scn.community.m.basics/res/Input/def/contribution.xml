@@ -1,6 +1,7 @@
 
 <component id="Input" 
-	title="Fiori Input"
+	title="Input Field"
+	tooltip="sap.m Input Field"
 	icon="res/Input/Input.png"
 	handlerType="sapui5" 
 	modes="m"

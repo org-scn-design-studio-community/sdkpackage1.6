@@ -1,6 +1,7 @@
 
 <component id="Toolbar" 
-	title="Fiori Toolbar"
+	title="Toolbar"
+	tooltip="sap.m Toolbar"
 	icon="res/Toolbar/Toolbar.png"
 	handlerType="sapui5" 
 	modes="m"
@@ -42,9 +43,9 @@
  		<defaultValue property="enabled">true</defaultValue>
 		<defaultValue property="TOP_MARGIN">0</defaultValue>
 		<defaultValue property="LEFT_MARGIN">0</defaultValue>
-		<defaultValue property="RIGHT_MARGIN">auto</defaultValue>
+		<defaultValue property="RIGHT_MARGIN">0</defaultValue>
 		<defaultValue property="BOTTOM_MARGIN">auto</defaultValue>
- 		<defaultValue property="WIDTH">400</defaultValue>
- 		<defaultValue property="HEIGHT">48</defaultValue>
+ 		<defaultValue property="WIDTH">auto</defaultValue>
+ 		<defaultValue property="HEIGHT">auto</defaultValue>
  	</initialization>
  </component>

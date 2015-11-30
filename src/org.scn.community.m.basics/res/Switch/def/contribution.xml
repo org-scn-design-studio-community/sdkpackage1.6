@@ -1,6 +1,7 @@
 
 <component id="Switch" 
-	title="Fiori Switch"
+	title="Switch"
+	tooltip="sap.m Switch"
 	icon="res/Switch/Switch.png"
 	handlerType="sapui5" 
 	modes="m"

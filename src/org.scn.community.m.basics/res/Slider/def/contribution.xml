@@ -1,0 +1,29 @@
+
+<component id="Slider" 
+	title="Slider"
+	tooltip="sap.m Slider"
+	icon="res/Slider/Slider.png"
+	handlerType="sapui5" 
+	modes="m"
+	propertySheetPath="aps/org.scn.community.PropertyPage.div.html"
+	group="ScnCommunityMBasics">
+
+	<requireJs modes="m">res/Slider/Slider</requireJs>
+  	<property id="enabled" type="boolean" title="Enabled"/>
+	<property id="min" type="float" title="Minimum"/>
+	<property id="max" type="float" title="Maximum"/>
+  	<property id="step" type="float" title="Step"/>
+  	<property id="value" type="float" title="Value"/>
+  	<property id="progress" type="boolean" title="Progress"/>
+  	<property id="showHandleTooltip" type="boolean" title="Show Handle Tooltip"/>
+  	<property id="onchange" type="ScriptText" title="On Change" group="Events"/>
+ 	<initialization>
+ 		<defaultValue property="value">0</defaultValue>
+ 		<defaultValue property="min">0</defaultValue>
+ 		<defaultValue property="max">100</defaultValue>
+ 		<defaultValue property="step">1</defaultValue>
+ 		<defaultValue property="progress">true</defaultValue>
+ 		<defaultValue property="showHandleTooltip">true</defaultValue>
+ 		<defaultValue property="enabled">true</defaultValue>
+ 	</initialization>
+ </component>
